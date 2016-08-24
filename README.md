@@ -1,2 +1,2 @@
 # dotfiles
-Personal settings files
+Personal settings files used by sergiofsfilho
