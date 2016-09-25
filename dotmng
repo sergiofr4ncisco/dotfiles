@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# dotfiles-manager.sh
+# dotmng
 # author: Sergio Francisco <sergiofsfilho@gmail.com>
 
 CFG_DIR=${HOME}/.config/dotfiles
@@ -13,6 +13,7 @@ DT=$(date +%Y%m%d%H%M%S)
 COMMIT_DT=$(date +%Y-%m-%d)
 COMMIT_HR=$(date +%H:%M:%S)
 
+# Check if the file $DOTFILES_INCLUDE already exists.
 if [ ! -f $DOTFILES_INCLUDE ]; then
 	echo "The file $DOTFILES_INCLUDE wasn't found."
 	echo "Create it and execute $0 again."
@@ -25,6 +26,8 @@ fi
 
 function backup ()
 {
+# Check if the folder $BACKUP_DIR already exists.
+# If don't, the script will create it.
 if [ ! -d "$BACKUP_DIR" ]; then
 	mkdir -p $BACKUP_DIR
 fi
@@ -44,11 +47,13 @@ fi
 function push ()
 {
 	backup;
-	rsync -avzh $DOTFILES_FILES $DOTFILES_GIT_DIR 
+	#rsync -avzh $(find . -maxdepth 1 -name ".*" | grep -f /home/sfrancisco/.config/dotfiles/dotfilesinclude) /home/sfrancisco/Projects/
+	#rsync -avzh $DOTFILES_FILES $DOTFILES_GIT_DIR 
 	cd $DOTFILES_GIT_DIR
+	pwd
 	git add $(find . -maxdepth 1 -name ".*")
-	git commit -m "Dotfiles updated at $COMMIT_DT $COMMIT_HR"
-	git push origin master
+	#git commit -m "Dotfiles updated at $COMMIT_DT $COMMIT_HR"
+	#git push origin master
 }
 
 function pull ()
