@@ -7,7 +7,11 @@ CFG_DIR=${HOME}/.config/dotfiles
 BACKUP_DIR=${CFG_DIR}/backup/
 LOG=${CFG_DIR}/dotfiles.log
 DOTFILES_INCLUDE=${CFG_DIR}/dotfilesinclude
-DATE=$(date +%Y%m%d%H%M%S)
+DOTFILES_GIT_DIR=${HOME}/Projects/dotfiles
+DOTFILES_FILES=$(find . -maxdepth 1 -name ".*" | grep -f $DOTFILES_INCLUDE)
+DT=$(date +%Y%m%d%H%M%S)
+COMMIT_DT=$(date +%Y-%m-%d)
+COMMIT_HR=$(date +%H:%M:%S)
 
 if [ ! -f $DOTFILES_INCLUDE ]; then
 	echo "The file $DOTFILES_INCLUDE wasn't found."
@@ -26,7 +30,7 @@ if [ ! -d "$BACKUP_DIR" ]; then
 fi
 
 cd $HOME
-tar czf ${BACKUP_DIR}/dotfiles-backup-${DATE}.tar.gz $(find . -maxdepth 1 -name ".*" | grep -f $DOTFILES_INCLUDE) > /dev/null 2>&1
+tar czf ${BACKUP_DIR}/dotfiles-backup-${DT}.tar.gz $DOTFILES_FILES > /dev/null 2>&1
 
 if [ "$?" -eq 1 ]; then
 	echo "ERROR: The dotfiles backup wasn't created."
@@ -37,13 +41,20 @@ else
 fi
 }
 
-#function push ()
-#{
-#}
+function push ()
+{
+	backup;
+	rsync -avzh $DOTFILES_FILES $DOTFILES_GIT_DIR 
+	cd $DOTFILES_GIT_DIR
+	git add $(find . -maxdepth 1 -name ".*")
+	git commit -m "Dotfiles updated at $COMMIT_DT $COMMIT_HR"
+	git push origin master
+}
 
-#function update ()
-#{
-#}
+function pull ()
+{
+	backup;
+}
 
 #function uninstall ()
 #{
@@ -58,19 +69,19 @@ fi
 #}
 
 if [ -z "$1" ]; then
-	echo "Usage: $0 {install|update|uninstall|status|backup}"
+	echo "Usage: $0 {push|pull|uninstall}"
 	exit 1
 else
 	case $1 in
 		backup)
 			backup;
 			;;
-#		install)
-#			install();
-#			;;
-#		update)
-#			update();
-#			;;
+		push)
+			push;
+			;;
+		pull)
+			pull;
+			;;
 #		uninstall)
 #			uninstall();
 #			;;
