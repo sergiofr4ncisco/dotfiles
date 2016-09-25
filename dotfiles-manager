@@ -1,0 +1,84 @@
+#!/bin/bash
+
+# dotfiles-manager.sh
+# author: Sergio Francisco <sergiofsfilho@gmail.com>
+
+CFG_DIR=${HOME}/.config/dotfiles
+BACKUP_DIR=${CFG_DIR}/backup/
+LOG=${CFG_DIR}/dotfiles.log
+DOTFILES_INCLUDE=${CFG_DIR}/dotfilesinclude
+DATE=$(date +%Y%m%d%H%M%S)
+
+if [ ! -f $DOTFILES_INCLUDE ]; then
+	echo "The file $DOTFILES_INCLUDE wasn't found."
+	echo "Create it and execute $0 again."
+	exit 1
+else
+	echo "List of files to be included."
+	cat $DOTFILES_INCLUDE
+	echo ""
+fi
+
+function backup ()
+{
+if [ ! -d "$BACKUP_DIR" ]; then
+	mkdir -p $BACKUP_DIR
+fi
+
+cd $HOME
+tar czf ${BACKUP_DIR}/dotfiles-backup-${DATE}.tar.gz $(find . -maxdepth 1 -name ".*" | grep -f $DOTFILES_INCLUDE) > /dev/null 2>&1
+
+if [ "$?" -eq 1 ]; then
+	echo "ERROR: The dotfiles backup wasn't created."
+	exit 1
+else
+	echo "Backup file created."
+
+fi
+}
+
+#function push ()
+#{
+#}
+
+#function update ()
+#{
+#}
+
+#function uninstall ()
+#{
+#}
+
+#function includeFile ()
+#{
+#}
+
+#function restore ()
+#{
+#}
+
+if [ -z "$1" ]; then
+	echo "Usage: $0 {install|update|uninstall|status|backup}"
+	exit 1
+else
+	case $1 in
+		backup)
+			backup;
+			;;
+#		install)
+#			install();
+#			;;
+#		update)
+#			update();
+#			;;
+#		uninstall)
+#			uninstall();
+#			;;
+#		restore)
+#			restore();
+#			;;
+		*)
+			echo "Action not recognized. Usage: $0 {install|update|uninstall|status|backup|}"
+			;;
+	esac
+fi
