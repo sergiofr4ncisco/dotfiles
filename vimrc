@@ -31,7 +31,7 @@ endif
 " highlight current line, F3 to enable/disable
 set cursorline
 nnoremap <F3> :set cursorline!<CR>
-" show line number, F4 to enable/disable
+" line numbers, F4 to enable/disable
 set number
 nnoremap <F4> :set number!<CR>
 
@@ -48,6 +48,8 @@ set showcmd
 " do incremental searching
 set incsearch
 
+" set Monaco 12 as default font
+set guifont=Monaco\ 12
 
 " Brief help
 " :PluginList       - lists configured plugins
