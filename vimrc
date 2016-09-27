@@ -31,16 +31,9 @@ endif
 " highlight current line, F3 to enable/disable
 set cursorline
 nnoremap <F3> :set cursorline!<CR>
-" visual margin, F4 to enable/disable
-set colorcolumn=81
-function! VisualMargin()
-	if(&colorcolumn == 81)
-		set colorcolumn=0
-	else
-		set colorcolumn=81
-	endif
-endfunc
-nnoremap <F4> :call VisualMargin()<CR>
+" show line number, F4 to enable/disable
+set number
+nnoremap <F4> :set number!<CR>
 
 " file encoding and format
 set encoding=utf-8

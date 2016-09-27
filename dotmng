@@ -7,8 +7,9 @@ CFG_DIR=${HOME}/.config/dotfiles
 BACKUP_DIR=${CFG_DIR}/backup/
 LOG=${CFG_DIR}/dotfiles.log
 DOTFILES_INCLUDE=${CFG_DIR}/dotfilesinclude
+DOTFILES_FILES=$(cat $DOTFILES_INCLUDE)
 DOTFILES_GIT_DIR=${HOME}/Projects/dotfiles
-DOTFILES_FILES=$(find . -maxdepth 1 -name ".*" | grep -f $DOTFILES_INCLUDE)
+#DOTFILES_FILES=$(find $HOME -name ".*" | grep -f $DOTFILES_INCLUDE)
 DT=$(date +%Y%m%d%H%M%S)
 COMMIT_DT=$(date +%Y-%m-%d)
 COMMIT_HR=$(date +%H:%M:%S)
@@ -50,8 +51,11 @@ function push ()
 	#rsync -avzh $(find . -maxdepth 1 -name ".*" | grep -f /home/sfrancisco/.config/dotfiles/dotfilesinclude) /home/sfrancisco/Projects/
 	#rsync -avzh $DOTFILES_FILES $DOTFILES_GIT_DIR 
 	cd $DOTFILES_GIT_DIR
-	pwd
-	git add $(find . -maxdepth 1 -name ".*")
+
+	for file in $DOTFILES_FILES; do
+		ln -s $HOME/.${file} $DOTFILES_GIT_DIR/$file
+	done
+
 	#git commit -m "Dotfiles updated at $COMMIT_DT $COMMIT_HR"
 	#git push origin master
 }
@@ -59,6 +63,7 @@ function push ()
 function pull ()
 {
 	backup;
+
 }
 
 #function uninstall ()
