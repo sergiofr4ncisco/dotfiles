@@ -1,3 +1,15 @@
+" sergiofsfilho .vimrc file
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 set nocompatible
 filetype off
 
@@ -28,7 +40,7 @@ if has('gui_running')
 	colorscheme solarized
 else
 	set t_Co=256
-	colorscheme colokschi-dark
+	colorscheme tender
 endif
 " highlight current line, F3 to enable/disable
 set cursorline
@@ -38,6 +50,7 @@ set number
 nnoremap <F4> :set number!<CR>
 
 " file encoding and format
+scriptencoding utf-8
 set encoding=utf-8
 set fileformats=unix,dos,mac
 
@@ -47,19 +60,20 @@ set history=50
 set ruler
 " display incomplete commands
 set showcmd
-" do incremental searching
-set incsearch
+
+" search settings
+set incsearch  " do incremental search
+set hlsearch   " highlight search
+set smartcase  " be case sensitive when input has a capital letter
+set ignorecase " be case insensitive when searching
 
 " set Monaco 12 as default font
 set guifont=Monaco\ 12
 
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to
-" auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" indent settings
+set autoindent
+set cindent
+set indentkeys-=0#            " do not break indent on #
+
+set showmatch                 " Show matching brackets.
+set matchtime=2               " Bracket blinking.
