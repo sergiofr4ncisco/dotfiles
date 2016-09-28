@@ -15,6 +15,8 @@ Plugin 'plasticboy/vim-markdown'
 " Themes
 Plugin 'jacoborus/tender'
 Plugin 'muellan/am-colors'
+Plugin 'akutschi/vim-colokschi'
+
 call vundle#end()
 filetype plugin indent on    " required
 " End Vundle Vim setup
@@ -26,7 +28,7 @@ if has('gui_running')
 	colorscheme solarized
 else
 	set t_Co=256
-	colorscheme tender
+	colorscheme colokschi-dark
 endif
 " highlight current line, F3 to enable/disable
 set cursorline
