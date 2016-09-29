@@ -27,3 +27,7 @@ alias connect-rdesktop-appirj01-1080x940="rdesktop -g 1080x940 -u sfrancisco.01 
 
 alias ll="ls -lrth --color"
 alias df="df -hT --sync --total"
+
+# Vagrant environment variables
+VAGRANT_HOME=${HOME}/.vagrant.d                                                                                                     
+VAGRANT_DEFAULT_PROVIDER=virtualbox

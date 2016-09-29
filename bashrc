@@ -19,6 +19,6 @@ getpasswd () {
 	echo "New random password generated: $randompasswd"
 }
 
-# Vagrant environment variables added on Tuesday June 7 2016
-VAGRANT_HOME=/home/sfrancisco/.vagrant.d
+# Vagrant environment variables
+VAGRANT_HOME=${HOME}/.vagrant.d
 VAGRANT_DEFAULT_PROVIDER=virtualbox
