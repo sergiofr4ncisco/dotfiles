@@ -11,7 +11,24 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Load zsh plugins. Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages cp dnf docker fedora vagrant history man sudo )
+#plugins=(git colored-man-pages cp dnf docker fedora vagrant history man sudo )
+plugins=(
+#aws
+colored-man-pages
+cp
+dnf
+fedora
+rsync
+systemd
+terraform
+terminitor
+vagrant
+virtualenv
+sudo
+docker
+firewalld
+git
+ssh-agent)
 
 # User configuration
 export PATH="/opt/terraform/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
