@@ -22,6 +22,7 @@ Bundle 'VundleVim/Vundle.vim'
 " Plugins
 """ Syntax highlighting
 Plugin 'pearofducks/ansible-vim'
+Bundle 'chase/vim-ansible-yaml'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 """ Themes
@@ -72,8 +73,8 @@ set hlsearch   " highlight search
 set smartcase  " be case sensitive when input has a capital letter
 set ignorecase " be case insensitive when searching
 
-" set Monaco 12 as default font
-set guifont=Monaco\ 12
+" set Monaco 11 as default font
+set guifont=Monaco\ 11
 
 " indent settings
 set autoindent
