@@ -20,14 +20,19 @@ call vundle#begin()
 " " let Vundle manage Vundle, required
 Bundle 'VundleVim/Vundle.vim'
 " Plugins
-""" syntax highlighting
+""" Syntax highlighting
 Plugin 'pearofducks/ansible-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-" Themes
+""" Themes
 Plugin 'jacoborus/tender'
 Plugin 'muellan/am-colors'
 Plugin 'akutschi/vim-colokschi'
+""" Lightline status bar
+Plugin 'itchyny/lightline.vim'
+
+" NERDtree, file browser
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -74,6 +79,26 @@ set guifont=Monaco\ 12
 set autoindent
 set cindent
 set indentkeys-=0#            " do not break indent on #
+set cinkeys-=0#
+set cinoptions=:s,ps,ts,cs
+set cinwords=if,else,while,do
+set cinwords+=for,switch,case
 
 set showmatch                 " Show matching brackets.
 set matchtime=2               " Bracket blinking.
+
+" status bar settins
+let g:lightline = { 'colorscheme': 'wombat'}
+set laststatus=2 " to show the status bar
+set cmdheight=2  " height to show commands below status bar
+set showcmd
+
+" Map NERDtree to CTRL+o
+nnoremap <C-o> :NERDTreeToggle<CR>
+
+" Tab settings
+set tabstop=2                  " tab size eql 2 spaces
+set softtabstop=2
+set shiftwidth=2               " default shift width for indents
+set expandtab                  " replace tabs with ${tabstop} spaces
+set smarttab
