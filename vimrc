@@ -74,7 +74,8 @@ set smartcase  " be case sensitive when input has a capital letter
 set ignorecase " be case insensitive when searching
 
 " set Monaco 11 as default font
-set guifont=Monaco\ 11
+" set guifont=Monaco\ 11
+set guifont=Menlo\ for\ Powerline\
 
 " indent settings
 set autoindent
@@ -89,7 +90,17 @@ set showmatch                 " Show matching brackets.
 set matchtime=2               " Bracket blinking.
 
 " status bar settins
-let g:lightline = { 'colorscheme': 'wombat'}
+" let g:lightline = { 'colorscheme': 'wombat'}
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
 set laststatus=2 " to show the status bar
 set cmdheight=2  " height to show commands below status bar
 set showcmd

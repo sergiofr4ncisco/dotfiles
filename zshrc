@@ -2,7 +2,7 @@
 export ZSH=/home/sfrancisco/.oh-my-zsh
 
 # Set the zsh theme
-ZSH_THEME="gnzh"
+ZSH_THEME="agnoster"
 
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
