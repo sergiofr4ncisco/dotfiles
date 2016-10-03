@@ -102,7 +102,7 @@ let g:lightline = {
       \ }
 
 set laststatus=2 " to show the status bar
-set cmdheight=2  " height to show commands below status bar
+set cmdheight=1  " height to show commands below status bar
 set showcmd
 
 " Map NERDtree to CTRL+o

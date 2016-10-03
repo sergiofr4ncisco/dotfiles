@@ -34,7 +34,7 @@ ssh-agent)
 export PATH="/opt/terraform/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
-# Personal alias
+# Personal aliases
 alias connect-vpn-corp="/opt/forticlientsslvpn-4.4.2323/forticlientsslvpn/64bit/forticlientsslvpn_cli --server vpn.muxi.com.br:10443 --vpnuser sfrancisco --pkcs12 /opt/forticlientsslvpn-4.4.2323/client-vpn.muxi.com.br.cert.p12"
 alias connect-vpn-muxi-dc="cd /etc/openvpn/sfrancisco-muxi && sudo /usr/sbin/openvpn --config /etc/openvpn/sfrancisco-muxi/sfrancisco-muxi.ovpn"
 alias connect-sup6371v="rdesktop-vrdp 10.10.15.200 -u sfrancisco -d appicorp -k pt-br &"
@@ -44,6 +44,9 @@ alias connect-rdesktop-appirj01-1080x940="rdesktop -g 1080x940 -u sfrancisco.01 
 
 alias ll="ls -lrth --color"
 alias df="df -hT --sync --total"
+
+alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && ll"
+alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && ll"
 
 # Vagrant environment variables
 VAGRANT_HOME=${HOME}/.vagrant.d                                                                                                     
