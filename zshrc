@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/sfrancisco/.oh-my-zsh
+DEFAULT_USER=$(whoami)
+export DEFAULT_USER
 
 # Set the zsh theme
 ZSH_THEME="agnoster"
