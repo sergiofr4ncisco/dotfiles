@@ -17,23 +17,24 @@ filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" " let Vundle manage Vundle, required
-Bundle 'VundleVim/Vundle.vim'
-" Plugins
-""" Syntax highlighting
-Plugin 'pearofducks/ansible-vim'
-Bundle 'chase/vim-ansible-yaml'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-""" Themes
-Plugin 'jacoborus/tender'
-Plugin 'muellan/am-colors'
-Plugin 'akutschi/vim-colokschi'
-""" Lightline status bar
-Plugin 'itchyny/lightline.vim'
-
-" NERDtree, file browser
-Plugin 'scrooloose/nerdtree'
+  " " let Vundle manage Vundle, required
+  Bundle 'VundleVim/Vundle.vim'
+  " Plugins
+  """ Syntax highlighting
+  Plugin 'pearofducks/ansible-vim'
+  Bundle 'chase/vim-ansible-yaml'
+  Plugin 'godlygeek/tabular'
+  Plugin 'plasticboy/vim-markdown'
+  """ Themes
+  Plugin 'jacoborus/tender'
+  Plugin 'muellan/am-colors'
+  Plugin 'akutschi/vim-colokschi'
+  " Lightline status bar
+  Plugin 'itchyny/lightline.vim'
+  " NERDtree, file browser
+  Plugin 'scrooloose/nerdtree'
+  " Show indent line
+  Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -48,12 +49,15 @@ else
 	set t_Co=256
 	colorscheme tender
 endif
+
 " highlight current line, F3 to enable/disable
 set cursorline
 nnoremap <F3> :set cursorline!<CR>
 " line numbers, F4 to enable/disable
 set number
 nnoremap <F4> :set number!<CR>
+" indent lines, F5 to enable/disable
+nnoremap <F5> :IndentLinesToggle<CR>
 
 " file encoding and format
 scriptencoding utf-8
