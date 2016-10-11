@@ -54,6 +54,9 @@ alias connect-rdesktop-appirj01-1080x940="rdesktop -g 1080x940 -u sfrancisco.01 
 alias ll="ls -lrth --color"
 alias df="df -hT --sync --total"
 
+# Settings to enable basic syntax highlighting to the less command
+# The package 'source-hightligh' needs to be installed.
+# sudo dnf install source-highlight
 export LESSOPEN="| $(which src-hilite-lesspipe.sh) %s"
 export LESS=" -R "
 alias less='less -m -N -g -i -J --underline-special --SILENT'
