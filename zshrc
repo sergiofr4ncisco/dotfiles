@@ -62,6 +62,7 @@ alias more='less'
 # Custom commands
 alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && ll"
 alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && ll"
+alias cd-dotfiles="cd ~sfrancisco/Projects/github-pessoal/dotfiles/ && pwd && ll && git status"
 
 # User configuration. Always let these two lines at the end of the .zshrc file.
 export PATH="/opt/terraform/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
