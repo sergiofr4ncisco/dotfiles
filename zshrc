@@ -32,13 +32,10 @@ firewalld
 git
 ssh-agent)
 
-# User configuration
-export PATH="/opt/terraform/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-source $ZSH/oh-my-zsh.sh
-
 # Vagrant environment variables
 VAGRANT_HOME=${HOME}/.vagrant.d                                                                                                     
 VAGRANT_DEFAULT_PROVIDER=virtualbox
+export VAGRANT_HOME VAGRANT_DEFAULT_PROVIDER
 
 # Aliases
 # VPN aliases
@@ -65,3 +62,7 @@ alias more='less'
 # Custom commands
 alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && ll"
 alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && ll"
+
+# User configuration. Always let these two lines at the end of the .zshrc file.
+export PATH="/opt/terraform/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+source $ZSH/oh-my-zsh.sh
