@@ -62,7 +62,20 @@ alias more='less'
 # Custom commands
 alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && ll"
 alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && ll"
-alias cd-dotfiles="cd ~sfrancisco/Projects/github-pessoal/dotfiles/ && pwd && ll && git status"
+
+ENV=$(hostnamectl status | grep -i Location | awk {'print $2'})
+export ENV
+
+if [ "$ENV" = 'work' ]; then
+  alias cd-dotfiles="cd ~sfrancisco/Projects/github-pessoal/dotfiles/ && echo && pwd && echo && ll && echo && git status"
+  alias cd-vagrantfiles="cd ~sfrancisco/Projects/github-pessoal/vagrantfiles/ && echo && pwd && echo && ll && echo && git status"
+elif [ "$ENV" = 'home' ]; then
+  alias cd-dotfiles="<insert home path here>"
+  alias cd-vagrantfiles="<insert home path here>"
+else
+  echo "ERROR: The alias 'cd-dotfiles' is not correctly configured. Have you checked your hostnamectl environment settings?"
+fi
+
 
 # User configuration. Always let these two lines at the end of the .zshrc file.
 export PATH="/opt/terraform/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
