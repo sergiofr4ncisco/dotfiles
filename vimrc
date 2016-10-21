@@ -113,8 +113,11 @@ set showcmd
 nnoremap <C-o> :NERDTreeToggle<CR>
 
 " Tab settings
-set tabstop=2                  " tab size eql 2 spaces
-set softtabstop=2
-set shiftwidth=2               " default shift width for indents
-set expandtab                  " replace tabs with ${tabstop} spaces
+set tabstop=5       " tab size eql 2 spaces
+set softtabstop=5
+set shiftwidth=5    " default shift width for indents
+set expandtab       " replace tabs with ${tabstop} spaces
 set smarttab
+
+au BufNewFile,BufRead *.yml        " settings for YAML files
+               \ set tabstop=2 softtabstop=2 shiftwidth=2
