@@ -45,9 +45,11 @@ export ENV
 if [ "$ENV" = 'work' ]; then
   alias cd-dotfiles="cd ~sfrancisco/Projects/github-pessoal/dotfiles/ && echo && pwd && echo && ll && echo && git status"
   alias cd-vagrantfiles="cd ~sfrancisco/Projects/github-pessoal/vagrantfiles/ && echo && pwd && echo && ll && echo && git status"
+  alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && ll"
+  alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && ll"
 elif [ "$ENV" = 'home' ]; then
-  alias cd-dotfiles="<insert home path here>"
-  alias cd-vagrantfiles="<insert home path here>"
+  alias cd-dotfiles="cd ~sfrancisco/Projects/dotfiles/ && echo && pwd && echo && ll && echo && git status"
+  alias cd-vagrantfiles="cd ~sfrancisco/Projects/vagrantfiles/ && echo && pwd && echo && ll && echo && git status"
 else
   echo "ERROR: Some aliases may be not correctly configured. Have you checked your hostnamectl environment settings?"
 fi
@@ -74,8 +76,6 @@ alias less='less -m -N -g -i -J --underline-special --SILENT'
 alias more='less'
 
 # Custom commands
-alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && ll"
-alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && ll"
 
 # User configuration. Always let these two lines at the end of the .zshrc file.
 export PATH="/opt/terraform/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
