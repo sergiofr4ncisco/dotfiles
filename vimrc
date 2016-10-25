@@ -112,12 +112,11 @@ set showcmd
 " Map NERDtree to CTRL+o
 nnoremap <C-o> :NERDTreeToggle<CR>
 
-" Tab settings
-set tabstop=5       " tab size eql 2 spaces
-set softtabstop=5
-set shiftwidth=5    " default shift width for indents
-set expandtab       " replace tabs with ${tabstop} spaces
-set smarttab
-
-au BufNewFile,BufRead *.yml        " settings for YAML files
-               \ set tabstop=2 softtabstop=2 shiftwidth=2
+" Indentation settings - tabs or whitespaces
+if has ("autocmd")
+     filetype on
+     autocmd FileType make setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab smarttab
+     autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
+     " Treat .rss files as XML
+     autocmd BufNewFile,BufRead *.rss setfiletype xml
+endif
