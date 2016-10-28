@@ -42,6 +42,11 @@ export VAGRANT_HOME VAGRANT_DEFAULT_PROVIDER
 ENV=$(hostnamectl status | grep -i Location | awk {'print $2'})
 export ENV
 
+# System commands alias to improve its outputs
+alias lll="ls -lrth --color"
+alias llla="ls -lrtha --color"
+alias df="df -hT --sync --total"
+
 if [ "$ENV" = 'work' ]; then
   alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && ll"
   alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && ll"
@@ -66,9 +71,6 @@ alias connect-rdesktop-sup6371v-1080x940="rdesktop -g 1080x940 -u sfrancisco -d 
 alias connect-sup6372v="rdesktop-vrdp 10.10.15.7 -u sfrancisco -d appicorp -k pt-br &"
 alias connect-rdesktop-appirj01-1080x940="rdesktop -g 1080x940 -u sfrancisco.01 -d appicorp -k pt-br appirj01:3389 &"
 
-# System commands alias to improve its outputs
-alias ll="ls -lrth --color"
-alias df="df -hT --sync --total"
 
 # Settings to enable basic syntax highlighting to the less command
 # The package 'source-hightligh' needs to be installed.
