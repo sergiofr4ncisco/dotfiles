@@ -43,13 +43,15 @@ ENV=$(hostnamectl status | grep -i Location | awk {'print $2'})
 export ENV
 
 if [ "$ENV" = 'work' ]; then
-  alias cd-dotfiles="cd ~sfrancisco/Projects/github-pessoal/dotfiles/ && echo && pwd && echo && ll && echo && git status"
-  alias cd-vagrantfiles="cd ~sfrancisco/Projects/github-pessoal/vagrantfiles/ && echo && pwd && echo && ll && echo && git status"
   alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && ll"
   alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && ll"
+  alias cd-dotfiles="cd ~sfrancisco/Projects/github-pessoal/dotfiles/ && echo && pwd && echo && ll && echo && git status"
+  alias cd-vagrantfiles="cd ~sfrancisco/Projects/github-pessoal/vagrantfiles/ && echo && pwd && echo && ll && echo && git status"
+  alias cd-devops="cd ~sfrancisco/Projects/github-pessoal/devops/ && echo && pwd && echo && ll && echo && git status"
 elif [ "$ENV" = 'home' ]; then
   alias cd-dotfiles="cd ~sfrancisco/Projects/dotfiles/ && echo && pwd && echo && ll && echo && git status"
   alias cd-vagrantfiles="cd ~sfrancisco/Projects/vagrantfiles/ && echo && pwd && echo && ll && echo && git status"
+  alias cd-devops="cd ~sfrancisco/Projects/devops/ && echo && pwd && echo && ll && echo && git status"
 else
   echo "ERROR: Some aliases may be not correctly configured. Have you checked your hostnamectl environment settings?"
 fi
