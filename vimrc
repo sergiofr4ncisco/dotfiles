@@ -20,12 +20,13 @@ call vundle#begin()
   " " let Vundle manage Vundle, required
   Bundle 'VundleVim/Vundle.vim'
   " Plugins
-  """ Syntax highlighting
+  """ Syntax highlighting and correction
   Bundle 'chase/vim-ansible-yaml'
   Bundle 'vim-ruby/vim-ruby'
   Plugin 'pearofducks/ansible-vim'
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown'
+  Plugin 'elzr/vim-json'
   """ Themes
   Plugin 'jacoborus/tender'
   Plugin 'muellan/am-colors'
@@ -119,9 +120,11 @@ if has ("autocmd")
      filetype on
      filetype indent on
      filetype plugin on
-     autocmd FileType make setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab smarttab
-     autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
-     autocmd FileType ruby compiler ruby
      " Treat .rss files as XML
      autocmd BufNewFile,BufRead *.rss setfiletype xml
+     autocmd BufNewFile,BufRead *.json setfiletype json
+     autocmd FileType ruby compiler ruby
+     autocmd FileType make setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab smarttab
+     autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
+     autocmd FileType json setlocal tabstop=8 softtabstop=2 shiftwidth=2 expandtab foldmethod=syntax formatoptions=tcq2l textwidth=78
 endif
