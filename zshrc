@@ -48,16 +48,17 @@ alias llla="ls -lrtha --color"
 alias df="df -hT --sync --total"
 
 if [ "$ENV" = 'work' ]; then
-  alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && ll"
-  alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && ll"
-  alias cd-dotfiles="cd ~sfrancisco/Projects/github-pessoal/dotfiles/ && echo && pwd && echo && ll && echo && git status"
-  alias cd-vagrant-pessoal="cd ~sfrancisco/Projects/github-pessoal/vagrant/ && echo && pwd && echo && ll && echo && git status"
-  alias cd-packer-pessoal="cd ~sfrancisco/Projects/github-pessoal/packer/ && echo && pwd && echo && ll && echo && git status"
-  alias cd-ansible-pessoal="cd ~sfrancisco/Projects/github-pessoal/ansible/ && echo && pwd && echo && ll && echo && git status"
+  alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && lll"
+  alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && lll"
+  alias cd-dotfiles="cd ~sfrancisco/Projects/github-pessoal/dotfiles/ && echo && pwd && echo && lll && echo && git status"
+  alias cd-vagrant-pessoal="cd ~sfrancisco/Projects/github-pessoal/vagrant/ && echo && pwd && echo && lll && echo && git status"
+  alias cd-packer-pessoal="cd ~sfrancisco/Projects/github-pessoal/packer/ && echo && pwd && echo && lll && echo && git status"
+  alias cd-ansible-pessoal="cd ~sfrancisco/Projects/github-pessoal/ansible/ && echo && pwd && echo && lll && echo && git status"
 elif [ "$ENV" = 'home' ]; then
-  alias cd-dotfiles="cd ~sfrancisco/Projects/dotfiles/ && echo && pwd && echo && ll && echo && git status"
-  alias cd-vagrant="cd ~sfrancisco/Projects/vagrant/ && echo && pwd && echo && ll && echo && git status"
-  alias cd-devops="cd ~sfrancisco/Projects/devops/ && echo && pwd && echo && ll && echo && git status"
+  alias cd-dotfiles="cd ~sfrancisco/Projects/dotfiles/ && echo && pwd && echo && lll && echo && git status"
+  alias cd-vagrant="cd ~sfrancisco/Projects/vagrant/ && echo && pwd && echo && lll && echo && git status"
+  alias cd-devops="cd ~sfrancisco/Projects/devops/ && echo && pwd && echo && lll && echo && git status"
+  alias cd-git="cd ~sfrancisco/Projects/ && lll"
 else
   echo "ERROR: Some aliases may be not correctly configured. Have you checked your hostnamectl environment settings?"
 fi
