@@ -15,15 +15,15 @@ COMMIT_DT=$(date +%Y-%m-%d)
 COMMIT_HR=$(date +%H:%M:%S)
 
 # Check if the file $DOTFILES_INCLUDE already exists.
-if [ ! -f $DOTFILES_INCLUDE ]; then
-	echo "The file $DOTFILES_INCLUDE wasn't found."
-	echo "Create it and execute $0 again."
-	exit 1
-else
-	echo "List of files to be included."
-	cat $DOTFILES_INCLUDE
-	echo ""
-fi
+	if [ ! -f $DOTFILES_INCLUDE ]; then
+		echo "The file $DOTFILES_INCLUDE wasn't found."
+		echo "Create it and execute $0 again."
+		exit 1
+	else
+		echo "List of files to be included."
+		cat $DOTFILES_INCLUDE
+		echo ""
+	fi
 
 function backup ()
 {
