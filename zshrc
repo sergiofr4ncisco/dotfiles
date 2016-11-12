@@ -57,6 +57,7 @@ if [ "$ENV" = 'work' ]; then
 elif [ "$ENV" = 'home' ]; then
   alias cd-dotfiles="cd ~sfrancisco/Projects/dotfiles/ && echo && pwd && echo && lll && echo && git status"
   alias cd-vagrant="cd ~sfrancisco/Projects/vagrant/ && echo && pwd && echo && lll && echo && git status"
+  alias cd-packer="cd ~sfrancisco/Projects/packer/ && echo && pwd && echo && lll && echo && git status"
   alias cd-devops="cd ~sfrancisco/Projects/devops/ && echo && pwd && echo && lll && echo && git status"
   alias cd-git="cd ~sfrancisco/Projects/ && lll"
 else
