@@ -95,9 +95,7 @@ set cinwords+=for,switch,case
 set showmatch                 " Show matching brackets.
 set matchtime=2               " Bracket blinking.
 
-" status bar settins
-" let g:lightline = { 'colorscheme': 'wombat'}
-
+" status bar settings
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'component': {
@@ -126,5 +124,9 @@ if has ("autocmd")
      autocmd FileType ruby compiler ruby
      autocmd FileType make setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab smarttab
      autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
-     autocmd FileType json setlocal tabstop=8 softtabstop=2 shiftwidth=2 expandtab foldmethod=syntax formatoptions=tcq2l textwidth=78
+     autocmd FileType *.json setlocal tabstop=8 softtabstop=2 shiftwidth=2 expandtab foldmethod=syntax formatoptions=tcq2l textwidth=78
 endif
+
+" Indentation lines settings
+let g:indentLine_setColors = 0
+let g:indentLine_char = '│'
