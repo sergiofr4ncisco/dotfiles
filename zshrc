@@ -72,6 +72,7 @@ alias connect-sup6371v="rdesktop -g 1024x768 -u sfrancisco -d appicorp -k pt-br 
 alias connect-sup6372v="rdesktop -g 1024x768 -u sfrancisco -d appicorp -k pt-br 10.10.15.7:3389 &"
 alias connect-appirj01="rdesktop -g 1024x768 -u sfrancisco -d appicorp -k pt-br 10.10.5.11:3389 &"
 
+
 # Settings to enable basic syntax highlighting to the less command
 # The package 'source-hightligh' needs to be installed.
 # sudo dnf install source-highlight

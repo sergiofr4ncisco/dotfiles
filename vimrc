@@ -31,6 +31,7 @@ call vundle#begin()
   Plugin 'jacoborus/tender'
   Plugin 'muellan/am-colors'
   Plugin 'akutschi/vim-colokschi'
+  Plugin 'altercation/vim-colors-solarized'
   " Lightline status bar
   Plugin 'itchyny/lightline.vim'
   " NERDtree, file browser
@@ -41,16 +42,18 @@ call vundle#begin()
 call vundle#end()
 filetype plugin indent on    " required
 " End Vundle Vim setup
-syntax on
+syntax enable
 set title
 " Set colorscheme
-if has('gui_running')
-	set background=dark
-	colorscheme solarized
-else
-	set t_Co=256
-	colorscheme tender
-endif
+"if has('gui_running')
+"	set background=dark
+"	colorscheme solarized
+"else
+"	set t_Co=256
+"	colorscheme solarized
+"endif
+set background=dark
+colorscheme solarized
 
 " highlight current line, F3 to enable/disable
 set cursorline
@@ -97,7 +100,7 @@ set matchtime=2               " Bracket blinking.
 
 " status bar settings
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'solarized',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },
