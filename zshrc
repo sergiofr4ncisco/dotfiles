@@ -79,7 +79,6 @@ alias connect-appirj01="rdesktop -g 1024x768 -u sfrancisco -d appicorp -k pt-br 
 export LESSOPEN="| $(which src-hilite-lesspipe.sh) %s"
 export LESS=" -R "
 alias less='less -m -N -g -i -J --underline-special --SILENT'
-alias more='less'
 
 # Packer fix to Fedora 24
 alias packer='/opt/packer/packer'
