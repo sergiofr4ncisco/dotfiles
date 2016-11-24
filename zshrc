@@ -39,30 +39,47 @@ export VAGRANT_HOME VAGRANT_DEFAULT_PROVIDER
 
 # Aliases
 
+## System commands alias to improve its outputs
+alias ll="ls -lrth --color"
+alias lla="ls -lrtha --color"
+alias df="df -hT --sync --total"
+
+## Environments switch
+alias load-work-git="sudo hostnamectl set-location work && source ~/.zshrc"
+alias load-home-git="sudo hostnamectl set-location home && source ~/.zshrc"
 ENV=$(hostnamectl status | grep -i Location | awk {'print $2'})
 export ENV
 
-# System commands alias to improve its outputs
-alias lll="ls -lrth --color"
-alias llla="ls -lrtha --color"
-alias df="df -hT --sync --total"
+## Git repos aliases
+GIT_DIR_STATUS="echo && pwd && echo && ll && git status"
+REPOS=(dotfiles vagrant packer ansible)
 
-if [ "$ENV" = 'work' ]; then
-  alias cd-git-muxi="cd ~sfrancisco/Projects/gitlab-muxi/ && lll"
-  alias cd-git-pessoal="cd ~sfrancisco/Projects/github-pessoal/ && lll"
-  alias cd-dotfiles="cd ~sfrancisco/Projects/github-pessoal/dotfiles/ && echo && pwd && echo && lll && echo && git status"
-  alias cd-vagrant-pessoal="cd ~sfrancisco/Projects/github-pessoal/vagrant/ && echo && pwd && echo && lll && echo && git status"
-  alias cd-packer-pessoal="cd ~sfrancisco/Projects/github-pessoal/packer/ && echo && pwd && echo && lll && echo && git status"
-  alias cd-ansible-pessoal="cd ~sfrancisco/Projects/github-pessoal/ansible/ && echo && pwd && echo && lll && echo && git status"
-elif [ "$ENV" = 'home' ]; then
-  alias cd-dotfiles="cd ~sfrancisco/Projects/dotfiles/ && echo && pwd && echo && lll && echo && git status"
-  alias cd-vagrant="cd ~sfrancisco/Projects/vagrant/ && echo && pwd && echo && lll && echo && git status"
-  alias cd-packer="cd ~sfrancisco/Projects/packer/ && echo && pwd && echo && lll && echo && git status"
-  alias cd-devops="cd ~sfrancisco/Projects/devops/ && echo && pwd && echo && lll && echo && git status"
-  alias cd-git="cd ~sfrancisco/Projects/ && lll"
-else
-  echo "ERROR: Some aliases may be not correctly configured. Have you checked your hostnamectl environment settings?"
-fi
+for REPO in $REPOS; do
+	GIT_DIR="/home/sfrancisco/Projects"
+	if [ "$ENV" = "work" ]; then
+		GIT_DIR="${GIT_DIR}/gitlab-muxi"
+	elif [ "$ENV" = "home" ]; then
+		GIT_DIR="${GIT_DIR}/github-pessoal"
+	else
+		echo "ERROR: Some aliases may be not correctly configured. Have you checked your hostnamectl environment settings?"
+	fi
+
+	# Define git aliases
+	alias cd-${REPO}-repo="cd ${GIT_DIR}/${REPO} && $GIT_DIR_STATUS"
+	alias pull-${REPO}-repo="cd-${REPO}-repo && echo && git pull"
+done
+
+function pull-all-repos () {
+	for REPO in $REPOS; do
+		cd ${GIT_DIR}/${REPO}
+		echo
+		pwd
+		echo
+		ll
+		git pull
+		cd
+	done	
+}
 
 # VPN aliases
 #alias connect-vpn-corp="/opt/forticlientsslvpn-4.4.2323/forticlientsslvpn/64bit/forticlientsslvpn_cli --server vpn.muxi.com.br:10443 --vpnuser sfrancisco --pkcs12 /opt/forticlientsslvpn-4.4.2323/client-vpn.muxi.com.br.cert.p12"
