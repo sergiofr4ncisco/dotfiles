@@ -66,19 +66,21 @@ for REPO in $REPOS; do
 
 	# Define git aliases
 	alias cd-${REPO}-repo="cd ${GIT_DIR}/${REPO} && $GIT_DIR_STATUS"
-	alias pull-${REPO}-repo="cd-${REPO}-repo && echo && git pull"
+	alias pull-${REPO}-repo="echo 'Pulling updates from $REPO git repo' && cd-${REPO}-repo && echo && git pull"
 done
 
 function pull-all-repos () {
 	for REPO in $REPOS; do
+		echo "Pulling updates from $REPO git repo"
 		cd ${GIT_DIR}/${REPO}
 		echo
 		pwd
 		echo
 		ll
 		git pull
-		cd
-	done	
+		echo
+	done
+	cd
 }
 
 # VPN aliases
