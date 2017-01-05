@@ -17,6 +17,7 @@ filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
   " " let Vundle manage Vundle, required
   Bundle 'VundleVim/Vundle.vim'
   " Plugins
@@ -38,6 +39,11 @@ call vundle#begin()
   Plugin 'scrooloose/nerdtree'
   " Show indent line
   Plugin 'Yggdroot/indentLine'
+  " Vim Snippets
+   Plugin 'MarcWeber/vim-addon-mw-utils'
+   Plugin 'tomtom/tlib_vim'
+   Plugin 'garbas/vim-snipmate'
+   Plugin 'honza/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on    " required
