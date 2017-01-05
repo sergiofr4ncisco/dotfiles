@@ -1,0 +1,11 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    projectHome: "/home/sfrancisco/Projects/"
+    telemetryConsent: "limited"
+  editor:
+    invisibles: {}
+  "exception-reporting":
+    userId: "9f2605ec-3f31-8eaf-3a94-cad98f5bb2e8"
+  welcome:
+    showOnStartup: false
