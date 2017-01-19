@@ -48,9 +48,15 @@ call vundle#begin()
 call vundle#end()
 filetype plugin indent on    " required
 " End Vundle Vim setup
+if (has("termguicolors"))
+	set termguicolors
+endif
 syntax enable
 set title
 " Set colorscheme
+" Options: tender, solarized
+colorscheme tender
+
 "if has('gui_running')
 "	set background=dark
 "	colorscheme solarized
@@ -58,8 +64,7 @@ set title
 "	set t_Co=256
 "	colorscheme solarized
 "endif
-set background=dark
-colorscheme solarized
+"set background=dark
 
 " highlight current line, F3 to enable/disable
 set cursorline
@@ -105,8 +110,9 @@ set showmatch                 " Show matching brackets.
 set matchtime=2               " Bracket blinking.
 
 " status bar settings
+" colorscheme options: solarized, tender
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'tender',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },
