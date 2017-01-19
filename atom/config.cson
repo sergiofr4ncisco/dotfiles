@@ -1,6 +1,4 @@
 "*":
-  autosave:
-    enabled: true
   core:
     autoHideMenuBar: true
     projectHome: "/home/sfrancisco/Projects/"
