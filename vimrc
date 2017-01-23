@@ -66,14 +66,19 @@ colorscheme tender
 "endif
 "set background=dark
 
-" highlight current line, F3 to enable/disable
+" Keyboard functions hotkeys
+
+" F3 - highlight current line
 set cursorline
 nnoremap <F3> :set cursorline!<CR>
-" line numbers, F4 to enable/disable
+" F4 - line numbers
 set number
 nnoremap <F4> :set number!<CR>
-" indent lines, F5 to enable/disable
+" F5 - indent lines
 nnoremap <F5> :IndentLinesToggle<CR>
+" F6 - Autoindent
+set paste
+nnoremap <F6> :set paste!<CR>
 
 " file encoding and format
 scriptencoding utf-8
