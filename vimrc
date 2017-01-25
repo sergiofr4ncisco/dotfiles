@@ -99,6 +99,7 @@ nnoremap <C-o> :NERDTreeToggle<CR>
 " I need to fix it. It seems to be working in the same way
 " like NERDTree file browser.
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
+map <Leader>ol :browse oldfiles<CR>
 
 "***************************************"
 
