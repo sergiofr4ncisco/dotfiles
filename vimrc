@@ -28,15 +28,18 @@ call vundle#begin()
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown'
   Plugin 'elzr/vim-json'
+  Plugin 'vim-scripts/vim-auto-save'
   """ Themes
   Plugin 'jacoborus/tender'
   Plugin 'muellan/am-colors'
   Plugin 'akutschi/vim-colokschi'
   Plugin 'altercation/vim-colors-solarized'
+  Plugin 'tomasr/molokai'
   " Lightline status bar
   Plugin 'itchyny/lightline.vim'
-  " NERDtree, file browser
+  " NERDtree - file browser + tabs
   Plugin 'scrooloose/nerdtree'
+  Plugin 'jistr/vim-nerdtree-tabs'
   " Show indent line
   Plugin 'Yggdroot/indentLine'
   " Vim Snippets
@@ -53,9 +56,10 @@ if (has("termguicolors"))
 endif
 syntax enable
 set title
-" Set colorscheme
-" Options: tender, solarized
-colorscheme tender
+
+" Set theme
+" Options: tender, solarized, molokai
+colorscheme molokai
 
 "if has('gui_running')
 "	set background=dark
@@ -66,19 +70,37 @@ colorscheme tender
 "endif
 "set background=dark
 
-" Keyboard functions hotkeys
+"***********************************************"
+"		Keyboard functions mappings	"
+"***********************************************"
+
+" Map leader key
+let mapleader=","
 
 " F3 - highlight current line
 set cursorline
 nnoremap <F3> :set cursorline!<CR>
+
 " F4 - line numbers
 set number
 nnoremap <F4> :set number!<CR>
+
 " F5 - indent lines
 nnoremap <F5> :IndentLinesToggle<CR>
+
 " F6 - Autoindent
 set paste
 nnoremap <F6> :set paste!<CR>
+
+" CTRL+o to NERDTree file browser
+nnoremap <C-o> :NERDTreeToggle<CR>
+
+" NERDTree Tabs
+" I need to fix it. It seems to be working in the same way
+" like NERDTree file browser.
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+"***************************************"
 
 " file encoding and format
 scriptencoding utf-8
@@ -129,9 +151,6 @@ set laststatus=2 " to show the status bar
 set cmdheight=1  " height to show commands below status bar
 set showcmd
 
-" Map NERDtree to CTRL+o
-nnoremap <C-o> :NERDTreeToggle<CR>
-
 " Indentation settings - tabs or whitespaces
 if has ("autocmd")
      set nocompatible
@@ -150,3 +169,6 @@ endif
 " Indentation lines settings
 let g:indentLine_setColors = 0
 let g:indentLine_char = '│'
+
+" Autosave settings
+let g:auto_save = 1  " enable AutoSave on Vim startup
