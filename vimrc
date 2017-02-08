@@ -19,7 +19,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
   " " let Vundle manage Vundle, required
-  Bundle 'VundleVim/Vundle.vim'
+  "Bundle 'VundleVim/Vundle.vim'
+  Plugin 'VundleVim/Vundle.vim'
   " Plugins
   """ Syntax highlighting and correction
   Bundle 'chase/vim-ansible-yaml'
@@ -43,32 +44,28 @@ call vundle#begin()
   " Show indent line
   Plugin 'Yggdroot/indentLine'
   " Vim Snippets
-   Plugin 'MarcWeber/vim-addon-mw-utils'
-   Plugin 'tomtom/tlib_vim'
-   Plugin 'garbas/vim-snipmate'
-   Plugin 'honza/vim-snippets'
+  Plugin 'MarcWeber/vim-addon-mw-utils'
+  Plugin 'tomtom/tlib_vim'
+  Plugin 'garbas/vim-snipmate'
+  Plugin 'honza/vim-snippets'
 
 call vundle#end()
+
 filetype plugin indent on    " required
 " End Vundle Vim setup
-if (has("termguicolors"))
-	set termguicolors
-endif
+
 syntax enable
 set title
 
-" Set theme
-" Options: tender, solarized, molokai
-colorscheme molokai
+" Set theme. Available options: tender, solarized, molokai
 
-"if has('gui_running')
-"	set background=dark
-"	colorscheme solarized
-"else
-"	set t_Co=256
-"	colorscheme solarized
-"endif
-"set background=dark
+if has('gui_running')
+	set background=dark
+	colorscheme tender
+else
+	set t_Co=256
+	colorscheme molokai
+endif
 
 "***********************************************"
 "		Keyboard functions mappings	"
@@ -122,8 +119,8 @@ set smartcase  " be case sensitive when input has a capital letter
 set ignorecase " be case insensitive when searching
 
 " set Monaco 11 as default font
-" set guifont=Monaco\ 11
-set guifont=Menlo\ for\ Powerline\
+"set guifont=Monaco\ 11
+set guifont=Menlo\ for\ Powerline\ 11
 
 " indent settings
 set autoindent
