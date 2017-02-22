@@ -103,5 +103,5 @@ alias less='less -m -N -g -i -J --underline-special --SILENT'
 alias packer='/opt/packer/packer'
 
 # User configuration. Always let these two lines at the end of the .zshrc file.
-export PATH="/opt/packer:/opt/terraform:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/bin:/opt/packer:/opt/terraform:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 source $ZSH/oh-my-zsh.sh
