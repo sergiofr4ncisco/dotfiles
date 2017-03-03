@@ -13,7 +13,6 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Load zsh plugins. Add wisely, as too many plugins slow down shell startup.
-#plugins=(git colored-man-pages cp dnf docker fedora vagrant history man sudo )
 plugins=(
 #aws
 colored-man-pages
@@ -84,8 +83,8 @@ function pull-all-repos () {
 }
 
 # VPN aliases
-#alias connect-vpn-corp="/opt/forticlientsslvpn-4.4.2323/forticlientsslvpn/64bit/forticlientsslvpn_cli --server vpn.muxi.com.br:10443 --vpnuser sfrancisco --pkcs12 /opt/forticlientsslvpn-4.4.2323/client-vpn.muxi.com.br.cert.p12"
-#alias connect-vpn-muxi-dc="cd /etc/openvpn/sfrancisco-muxi && sudo /usr/sbin/openvpn --config /etc/openvpn/sfrancisco-muxi/sfrancisco-muxi.ovpn"
+alias connect-vpn-corp="sudo /opt/forticlient/64bit/forticlientsslvpn_cli --server vpn.muxi.com.br:10443 --vpnuser sfrancisco --pkcs12 /opt/forticlient/client-vpn.muxi.com.br.cert.p12"
+alias connect-vpn-tivit="cd /etc/openvpn && sudo /usr/sbin/openvpn --config /etc/openvpn/sfrancisco-muxi.conf"
 # rdesktop alias
 alias connect-sup6371v="rdesktop -g 1024x768 -u sfrancisco -d appicorp -k pt-br 10.10.15.200:3389 &"
 alias connect-sup6372v="rdesktop -g 1024x768 -u sfrancisco -d appicorp -k pt-br 10.10.15.7:3389 &"
@@ -95,12 +94,12 @@ alias connect-appirj01="rdesktop -g 1024x768 -u sfrancisco -d appicorp -k pt-br 
 # Settings to enable basic syntax highlighting to the less command
 # The package 'source-hightligh' needs to be installed.
 # sudo dnf install source-highlight
-export LESSOPEN="| $(which src-hilite-lesspipe.sh) %s"
-export LESS=" -R "
-alias less='less -m -N -g -i -J --underline-special --SILENT'
+#export LESSOPEN="| $(which src-hilite-lesspipe.sh) %s"
+#export LESS=" -R "
+#alias less='less -m -N -g -i -J --underline-special --SILENT'
 
 # Packer fix to Fedora 24
-alias packer='/opt/packer/packer'
+#alias packer='/opt/packer/packer'
 
 # User configuration. Always let these two lines at the end of the .zshrc file.
 export PATH="$HOME/.bin:/opt/packer:/opt/terraform:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
