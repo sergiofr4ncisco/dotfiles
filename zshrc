@@ -14,17 +14,17 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Load zsh plugins. Add wisely, as too many plugins slow down shell startup.
 plugins=(
-#aws
+aws
 colored-man-pages
 cp
-dnf
-fedora
+#dnf
+#fedora
 rsync
 systemd
-#terraform
+terraform
 #terminitor
 vagrant
-#virtualenv
+virtualenv
 sudo
 #docker
 firewalld
