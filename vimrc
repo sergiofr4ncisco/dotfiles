@@ -29,7 +29,8 @@ call vundle#begin()
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown'
   Plugin 'elzr/vim-json'
-  Plugin 'vim-scripts/vim-auto-save'
+  Plugin 'hashivim/vim-terraform'
+"  Plugin 'vim-scripts/vim-auto-save'
   """ Themes
   Plugin 'jacoborus/tender'
   Plugin 'muellan/am-colors'
@@ -169,4 +170,18 @@ let g:indentLine_setColors = 0
 let g:indentLine_char = '│'
 
 " Autosave settings
-let g:auto_save = 1  " enable AutoSave on Vim startup
+" let g:auto_save = 1  " enable AutoSave on Vim startup
+
+
+""" Terraform plugins settings
+"" hashivim/vim-terraform (https://github.com/hashivim/vim-terraform)
+
+" Allow vim-terraform to override your .vimrc indentation syntax for matching files. Defaults to 0 which is off.
+let g:terraform_align=1
+
+" Allow vim-terraform to automatically fold (hide until unfolded) sections of terraform code. Defaults to 0 which is off.
+let g:terraform_fold_sections=1
+
+" Allow vim-terraform to re-map the spacebar to fold/unfold.
+" This works in conjunction with let g:terraform_fold_sections=1 which should be enabled if you plan to use this feature. Defaults to 0 which is off.
+let g:terraform_remap_spacebar=1
