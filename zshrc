@@ -4,7 +4,7 @@ DEFAULT_USER=$(whoami)
 export DEFAULT_USER
 
 # Set the zsh theme
-ZSH_THEME="agnoster"
+ZSH_THEME="amuse"
 
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
