@@ -14,7 +14,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Load zsh plugins. Add wisely, as too many plugins slow down shell startup.
 plugins=(
-aws
+#aws
 colored-man-pages
 cp
 #dnf
