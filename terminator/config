@@ -4,7 +4,7 @@
   enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   handle_size = 0
   inactive_color_offset = 0.75
-  title_font = Menlo for Powerline 10
+  title_font = Menlo for Powerline Bold 10
   title_hide_sizetext = True
   title_inactive_bg_color = "#121212"
   title_inactive_fg_color = "#ffffff"
@@ -25,11 +25,10 @@
   [[default]]
     background_color = "#121212"
     background_darkness = 0.95
-    background_image = None
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#bbbbbb"
-    font = Menlo for Powerline 12
+    font = Meslo LG S for Powerline 12
     foreground_color = "#bbbbbb"
     icon_bell = False
     palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
@@ -39,7 +38,6 @@
   [[solarized]]
     background_color = "#002b36"
     background_darkness = 0.9
-    background_image = None
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#ffffff"
