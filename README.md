@@ -1,12 +1,23 @@
 # Sergio Francisco's .files
 
-These are the personal settings files used by Sergio Francisco in a daily basis. My main goal with this repository is to show how I set up my environment and use Github as a central to keep my files accessibles whenever and wherever I need it.
+These are my dotfiles used in a daily basis at my work and home.
 
-I am running on Linux Fedora 23.
+My main goal with this repository is to show how I set up my environment and use Github as a central repository to keep my files available whenever and wherever I need it.
 
-## Installation
+## Work
 
-## Update files
+**Operating System**: Ubuntu 18.04.
+**Terminal**: [Terminator](https://gnometerminator.blogspot.com/p/introduction.html)
+**Shell**: [zsh](http://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) framework.
+**Text Editor**: vim and Atom.
+
+## Home
+
+**Operating System**: macOS High Sierra (since August/2018)
+**Terminal**: [iTerm2](https://www.iterm2.com/)
+**Shell**: [zsh](http://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) framework.
+**Text Editor**: vim and Atom.
+
 
 ## Thanks to...
 

@@ -28,7 +28,7 @@ call vundle#begin()
   Plugin 'pearofducks/ansible-vim'
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown'
-  Plugin 'elzr/vim-json'
+"  Plugin 'elzr/vim-json'
   Plugin 'hashivim/vim-terraform'
 "  Plugin 'vim-scripts/vim-auto-save'
   """ Themes
