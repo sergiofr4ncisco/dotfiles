@@ -7,17 +7,22 @@ My main goal with this repository is to show how I set up my environment and use
 ## Work
 
 **Operating System**: Ubuntu 18.04.
+
 **Terminal**: [Terminator](https://gnometerminator.blogspot.com/p/introduction.html)
+
 **Shell**: [zsh](http://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) framework.
+
 **Text Editor**: vim and Atom.
 
 ## Home
 
 **Operating System**: macOS High Sierra (since August/2018)
-**Terminal**: [iTerm2](https://www.iterm2.com/)
-**Shell**: [zsh](http://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) framework.
-**Text Editor**: vim and Atom.
 
+**Terminal**: [iTerm2](https://www.iterm2.com/)
+
+**Shell**: [zsh](http://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) framework.
+
+**Text Editor**: vim and Atom.
 
 ## Thanks to...
 
