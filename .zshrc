@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -132,6 +139,7 @@ source $ZSH/oh-my-zsh.sh
 alias edit-zshconfig="vim ~/.zshrc"
 alias edit-sshconfig="vim ~/.ssh/config"
 alias edit-dotfiles="cd ~/Code/personal/github/dotfiles/ && ll"
+alias edit-vimrc="vim ~/.vimrc"
 
 # Load environments
 alias start-etus-work="cd ~/Code/professional/etus && ll"
@@ -154,7 +162,26 @@ alias lla="ll -a"
 alias whatsmyip="echo $(curl -s httpbin.org/ip | jq '.origin')"
 alias gcloud="docker run --rm --volumes-from gcloud-config gcr.io/google.com/cloudsdktool/cloud-sdk gcloud"
 alias kubectl="docker run --rm --volumes-from gcloud-config gcr.io/google.com/cloudsdktool/cloud-sdk kubectl"
+
+# Docker aliases
+alias dkps="docker ps"
+alias dkpsa="docker ps -a"
+alias dkst="docker stats"
+alias dkimgs="docker images"
+alias dkcpup="docker-compose up -d"
+alias dkcpdown="docker-compose down"
+alias dkcpstart="docker-compose start"
+alias dkcpstop="docker-compose stop"
+
 #
 #
 #
 eval "$(direnv hook zsh)"
+
+# Powerlevel10k
+#
+# Load zsh theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
