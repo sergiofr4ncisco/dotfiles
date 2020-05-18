@@ -1,4 +1,9 @@
+colorscheme onedark     " requires cobalt.vim to be in ~/.vim/colors
 syntax on               " enable syntax highlighting
+
+highlight Normal ctermbg=None
+highlight LineNr ctermfg=DarkGrey
+
 set cursorline          " highlight the current line
 " set background=dark   " darker color scheme
 " set ruler             " show line number in bar
@@ -14,7 +19,6 @@ set scrolloff=5         " show at least 5 lines above/below
 filetype on             " enable filetype detection
 filetype indent on      " enable filetype-specific indenting
 filetype plugin on      " enable filetype-specific plugins
-" colorscheme cobalt      " requires cobalt.vim to be in ~/.vim/colors
 
 " column-width visual indication
 let &colorcolumn=join(range(81,999),",")
@@ -50,3 +54,21 @@ inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
+
+" Vim Plug plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+
+call plug#end()
+
+" Enable Powerline Fonts
+let g:airline_powerline_fonts = 1
+
+" NERDTree settings
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
