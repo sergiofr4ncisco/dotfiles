@@ -1,0 +1,22 @@
+[user]
+	name = Sérgio Francisco
+	email = sergiofsfilho@gmail.com
+[core]
+	editor = vi
+	excludesfile = ~/.gitignore
+  	autocrlf = input
+[color]
+  	branch = auto
+  	diff = auto
+  	interactive = auto
+  	status = auto
+[web]
+  	browser = google-chrome
+[credential]
+  	helper = osxkeychain
+[push]
+  	default = simple
+[merge]
+  	tool = kdiff3
+[difftool]
+  	prompt = false
