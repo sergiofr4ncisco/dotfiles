@@ -1,31 +1,20 @@
-# Sergio Francisco's .files
+# sergiofr4ncisco dotfiles
 
-These are my dotfiles used in a daily basis at my work and home.
-
-My main goal with this repository is to show how I set up my environment and use Github as a central repository to keep my files available whenever and wherever I need it.
-
-## Work
-
-**Operating System**: Ubuntu 18.04.
-
-**Terminal**: [Terminator](https://gnometerminator.blogspot.com/p/introduction.html)
-
-**Shell**: [zsh](http://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) framework.
-
-**Text Editor**: vim and Atom.
+My main goal with this repository is to show how I set up my environment and use GitHub as a central repository to keep my files available whenever and wherever I need it.
+Since July 2019 I'm only using macOS, so I can only guarantee they'll work on a Mac.
 
 ## Home
 
-**Operating System**: macOS High Sierra (since August/2018)
+**Operating System**: macOS (since August/2018)
 
 **Terminal**: [iTerm2](https://www.iterm2.com/)
 
 **Shell**: [zsh](http://www.zsh.org/) and [oh-my-zsh](https://ohmyz.sh/) framework.
 
-**Text Editor**: vim and Atom.
+**Text Editor**: [vim](https://www.vim.org/) and [Visual Studio Code](https://code.visualstudio.com/).
 
-## Thanks to...
-
-* [Vinicius Figueiredo](https://github.com/viniciusfs) and his [dotfiles repository](https://github.com/viniciusfs/dotfiles)
-* [Mathias Bynens](https://github.com/mathiasbynens) and his [dotfiles repository](https://github.com/mathiasbynens/dotfiles)
-* [joedicastro](https://github.com/joedicastro) and his [dotfiles repository](https://github.com/joedicastro/dotfiles)
+## I also recommend you to see these dotfiles repositories (that I like and inspired to create my own):
+* [geerlingguy's dotfiles](https://github.com/geerlingguy/dotfiles)
+* [viniciusfs's dotfiles](https://github.com/viniciusfs/dotfiles)
+* [mathiasbynes's dotfiles](https://github.com/mathiasbynens/dotfiles)
+* [joedicastro's dotfiles](https://github.com/joedicastro/dotfiles)
