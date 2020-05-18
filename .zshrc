@@ -62,7 +62,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-cask
 colored-man-pages
 colorize
 command-not-found
@@ -128,16 +127,23 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias sshconfig="vim ~/.ssh/config"
+
+# Edit useful files
+alias edit-zshconfig="vim ~/.zshrc"
+alias edit-sshconfig="vim ~/.ssh/config"
+alias edit-dotfiles="cd ~/Code/personal/github/dotfiles/ && ll"
+
+# Load environments
 alias start-etus-work="cd ~/Code/professional/etus && ll"
+
 # Terraform aliases
 alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
 alias tfip="tfi && tfp"
+
+# Bash improvements
+alias lla="ll -a"
 
 # Settings for virtualenvwrapper (not using yet)
 #export WORKON_HOME=$HOME/Code/.virtualenvs
