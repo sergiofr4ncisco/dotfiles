@@ -43,7 +43,7 @@ export UPDATE_ZSH_DAYS=7
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -159,9 +159,9 @@ alias lla="ll -a"
 #source /usr/local/bin/virtualenvwrapper.sh
 
 # Other cool stuff
-alias whatsmyip="echo $(curl -s httpbin.org/ip | jq '.origin')"
-alias gcloud="docker run --rm --volumes-from gcloud-config gcr.io/google.com/cloudsdktool/cloud-sdk gcloud"
-alias kubectl="docker run --rm --volumes-from gcloud-config gcr.io/google.com/cloudsdktool/cloud-sdk kubectl"
+#alias whatsmyip="echo $(curl -s httpbin.org/ip | jq '.origin')"
+#alias gcloud="docker run --rm --volumes-from gcloud-config gcr.io/google.com/cloudsdktool/cloud-sdk gcloud"
+#alias kubectl="docker run --rm --volumes-from gcloud-config gcr.io/google.com/cloudsdktool/cloud-sdk kubectl"
 
 # Docker aliases
 alias dkps="docker ps"
@@ -173,8 +173,29 @@ alias dkcpdown="docker-compose down"
 alias dkcpstart="docker-compose start"
 alias dkcpstop="docker-compose stop"
 
-#
-#
+# Google Cloud Platform aliases
+alias gcloud-load-etus-media-prod="gcloud config set project etus-media-prod \
+  && gcloud config set compute/region us-east1 \
+  && gcloud config set compute/zone us-east1-b \
+  && gcloud config set run/region us-east1 \
+  && gcloud config set run/platform managed"
+
+alias gcloud-load-etus-media-development-staging="gcloud config set project etus-media-development-staging \
+  && gcloud config set compute/region us-east1 \
+  && gcloud config set compute/zone us-east1-b \
+  && gcloud config set run/region us-east1 \
+  && gcloud config set run/platform managed"
+
+#alias gcloud-config-project="gcloud config set project" # pass project-id
+#alias gcloud-config-zone="gcloud config set compute/zone" # pass compute-zone
+#alias gcloud-config-region="gcloud config set compute/region" # pass compute-region
+alias gcloud-update="gcloud components update"
+## Cloud Shell
+alias gcp-connect-cloud-shell="gcloud alpha cloud-shell ssh"
+## GKE
+## GCE
+alias gce-instances-list="gcloud compute instances list"
+
 #
 eval "$(direnv hook zsh)"
 
@@ -185,3 +206,18 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/sfrancisco/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sfrancisco/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/sfrancisco/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sfrancisco/google-cloud-sdk/completion.zsh.inc'; fi
+
+# iTerm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Activate Python virtualenvwrapper 
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Code/professional/etus/github/
+source /usr/local/bin/virtualenvwrapper.sh
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
